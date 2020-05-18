@@ -20,15 +20,15 @@ range information which is determined by east (x1), west (x2), north (y1), and s
 
 Note: To represent neighborhood we  construct a dictionary where key is node label and its corresponding value is its neighbors, as illustrated follows. There is an example of dictionary that stores relations:
 
-'A': ['B', 'C']
-'B': ['D', 'E']
-'C': ['F', 'H']
-'D': ['E', 'G']
-'E': ['G']
-'F': ['G', 'H']
-'G': ['I']
-'H': []
-'I': []
+>'A': ['B', 'C']
+>'B': ['D', 'E']
+>'C': ['F', 'H']
+>'D': ['E', 'G']
+>'E': ['G']
+>'F': ['G', 'H']
+>'G': ['I']
+>'H': []
+>'I': []
 
 ### Route Finding in MANET
 
@@ -58,9 +58,8 @@ distance:
 
 disti,j = srtq((ix − jx)^2 + (iy − jy)^2)
 
+![4](https://user-images.githubusercontent.com/32525636/82229102-a9898d00-9932-11ea-9a25-57c643689397.png)
 
 In MANETs, apart from initial data transfer, it is also necessary to find routes every time a link breakage occurs. Link breakage problem arises mostly when a node leaves the route through which data packets are transferred. A node becomes unreachable either if it runs out of its battery or goes beyond the transmission range of a node from which it receives packets. That’s why distance and residual battery level has been intentionally included in the calculation of every link cost in this assignment. As the probability of a node being exceeded transmission range gets lowered with a decrease in distance between two nodes, it is rational to select a link having a more closer one. Similarly, a link destined to a node having higher residual battery level should also be selected as it is lower probability of such node being left due to the drainage of battery. Therefore, the optimal route (RouteOPT) selection among possible routes (R) is done as follows:
 
 RouteOPT = argm r min Cost(Route r) | r ∈ R
-
-### 
